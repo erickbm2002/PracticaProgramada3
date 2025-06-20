@@ -1,0 +1,12 @@
+#Ignora los archivos generados por compilación
+/target/
+*.class
+
+#Ignora la configuracion de los IDes
+*.iml
+*idea/
+*.log
+
+#Ignora los archivos temporales
+.DS_Store
+Thumbs.db
