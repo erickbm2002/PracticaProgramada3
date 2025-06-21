@@ -13,17 +13,11 @@ public class ArrayListMedico {
     }
 
     public void agregarMedico(Object medico) {
-        listaMedicos.add(medico);
+        this.listaMedicos.add(medico);
     }
 
-    @Override
-    public String toString() {
-        for (int i = 0; i < listaMedicos.size(); i++) {
-            Object medicoActual = listaMedicos.get(i);
-            medicoActual.getClass();
-        }
-
-        return toString();
+    public void mostrarDatosLista() {
+        
     }
 
     public ArrayList<Object> getListaMedicos() {
