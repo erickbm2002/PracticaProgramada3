@@ -5,7 +5,6 @@
 package logicaMedico;
 
 import MenuMedico.MenuPrincipal;
-import MenuMedico.formIngresarMedico;
 
 /**
  *

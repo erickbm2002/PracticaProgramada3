@@ -10,3 +10,5 @@
 #Ignora los archivos temporales
 .DS_Store
 Thumbs.db
+/dist/
+/build/

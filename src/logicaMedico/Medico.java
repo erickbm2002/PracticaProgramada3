@@ -3,36 +3,68 @@ package logicaMedico;
 public class Medico {
     private String codigo;
     private String nombre;
-    private String especialidad;
+    private Especialidad especialidad;
 
-    public Medico(String codigo, String nombre, String especialidad) {
+    public enum Especialidad {
+        PEDIATRIA,
+        CARDIOLOGIA,
+        DERMATOLOGIA,
+        NEUROLOGIA,
+    }
+
+    public Medico(String codigo, String nombre, Especialidad especialidad) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.especialidad = especialidad;
     }
 
+    
+
+
+    @Override
+    public String toString() {
+        return "Código: " + codigo + "\nNombre: " + nombre + "\nEspecialidad: " + especialidad;
+    }
+
+
+
+
     public String getCodigo() {
         return codigo;
     }
+
+
+
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+
+
 
     public String getNombre() {
         return nombre;
     }
 
-    public String getEspecialidad() {
-        return especialidad;
-    }
+
+
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
+
+
+
+    public Especialidad getEspecialidad() {
+        return especialidad;
     }
 
-    @Override
-    public String toString() {
-        return "Código: " + codigo + "\nNombre: " + nombre + "\nEspecialidad: " + especialidad;
+
+
+
+    public void setEspecialidad(Especialidad especialidad) {
+        this.especialidad = especialidad;
     }
 }
