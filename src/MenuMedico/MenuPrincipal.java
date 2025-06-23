@@ -114,7 +114,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cirujano.png"))); // NOI18N
         jLabel3.setText("jLabel3");
 
-        btnSalir.setBackground(null);
+        btnSalir.setBackground(new java.awt.Color(102, 102, 102));
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Salir.png"))); // NOI18N
         btnSalir.setBorder(null);
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -184,24 +184,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        formIngresarMedico menuIngresar = new formIngresarMedico(this.listaMedicos);
+        FormIngresarMedico menuIngresar = new FormIngresarMedico(this.listaMedicos);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-       
+       FormConsultarMedico menuConsultar = new FormConsultarMedico(this.listaMedicos);
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        
-    }//GEN-LAST:event_btnEditarActionPerformed
-
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
+        FormEliminarMedico menuEliminar = new FormEliminarMedico(this.listaMedicos);
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        FormEditarMedico menuEditar = new FormEditarMedico(this.listaMedicos);
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     /**
      * @param args the command line arguments
