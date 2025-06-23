@@ -1,8 +1,10 @@
 package logicaMedico;
 
+import java.io.Serializable;
+
 import javax.swing.JOptionPane;
 
-public class Medico {
+public class Medico implements Serializable {
     private String codigo;
     private String nombre;
     private String apellido;
@@ -73,7 +75,16 @@ public class Medico {
         }
         return posicion;
     }
-
+     @Override
+     public String toString() {
+         // TODO Auto-generated method stub
+         return getCodigo() + ","
+            +   getNombre() + ","
+            +   getApellido() + ","
+            +   getCorreo() + ","
+            +   getTurno() + ","
+            +   getEspecialidad();
+     }
 
     
 

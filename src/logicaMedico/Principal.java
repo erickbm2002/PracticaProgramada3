@@ -17,8 +17,10 @@ public class Principal {
      */
     public static void main(String[] args) {
         ArrayListMedico listaMedicos = new ArrayListMedico();
-        MenuPrincipal menu = new MenuPrincipal(listaMedicos);
-        
+        ManejoArchivos manejoArchivos = new ManejoArchivos(listaMedicos);
+        if(manejoArchivos.verificarOCrearArchivo("archivo.txt")) {
+            MenuPrincipal menu = new MenuPrincipal(listaMedicos, manejoArchivos);
+        }  
     }
     
 }

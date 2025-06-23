@@ -9,6 +9,7 @@ import java.text.Normalizer;
 import javax.swing.JOptionPane;
 
 import logicaMedico.ArrayListMedico;
+import logicaMedico.ManejoArchivos;
 
 /**
  *
@@ -20,8 +21,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
 
     private ArrayListMedico listaMedicos;
-    public MenuPrincipal(ArrayListMedico listMedico) {
+    private ManejoArchivos manejoArchivos;
+    public MenuPrincipal(ArrayListMedico listMedico, ManejoArchivos manejoArchivos) {
         this.listaMedicos = listMedico;
+        this.manejoArchivos = manejoArchivos;
         initComponents();
         setVisible(true);
         setLocationRelativeTo(null);
@@ -48,6 +51,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            
+        });
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -207,6 +213,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        manejoArchivos.guardarInformacion(listaMedicos);
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 

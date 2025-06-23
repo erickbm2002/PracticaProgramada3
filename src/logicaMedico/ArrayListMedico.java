@@ -1,12 +1,13 @@
 package logicaMedico;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
 import logicaMedico.Medico.Especialidad;
 
-public class ArrayListMedico {
+public class ArrayListMedico implements Serializable {
 
     private ArrayList<Medico> listaMedicos;
 
