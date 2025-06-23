@@ -237,7 +237,6 @@ public class FormIngresarMedico extends javax.swing.JFrame {
         this.listaMedico.agregarMedico(medico);
         limpiarCampos();
         JOptionPane.showMessageDialog(null, "Medico ingresado correctamente");
-        JOptionPane.showMessageDialog(null, listaMedico.mostrarDatosLista());
 
     }//GEN-LAST:event_btnGuardarActionPerformed
 

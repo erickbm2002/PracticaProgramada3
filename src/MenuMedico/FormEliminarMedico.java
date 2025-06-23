@@ -4,6 +4,7 @@
  */
 package MenuMedico;
 
+import javax.print.attribute.standard.JobHoldUntil;
 import javax.swing.JOptionPane;
 
 import logicaMedico.*;
@@ -268,11 +269,43 @@ public class FormEliminarMedico extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
+        String codigoIngresado = txtCodigo.getText();
+        int posicionMedico = listaMedico.buscarMedico(codigoIngresado);
+        if(posicionMedico != -1) {
+            JOptionPane.showMessageDialog(null, "Doctor Encontrado Exitosamente");
+            Medico medicoActual = listaMedico.devolverMedicoBuscado(posicionMedico);
+            txtCodigo.setEditable(false);
+            txtNombre.setText(medicoActual.getNombre());
+            txtNombre.setEditable(false);
+            txtApellido.setText(medicoActual.getApellido());
+            txtApellido.setEditable(false);
+            txtCorreo.setText(medicoActual.getCorreo());
+            txtCorreo.setEditable(false);
+            combEspecialidad.setSelectedIndex(medicoActual.devolverPosicioEspecialidad(medicoActual.getEspecialidad()));
+            combEspecialidad.setEnabled(false);
+            combTurno.setSelectedIndex(medicoActual.devolverPosicionTurno(medicoActual.getTurno()));
+            combTurno.setEnabled(false);
+        }    else {
+            txtCodigo.setText("");
+        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
+        int posicionMedicoEliminar = listaMedico.buscarMedico(txtCodigo.getText());
+        if(posicionMedicoEliminar != -1) {
+            int opcionIngresada = JOptionPane.showConfirmDialog(null, "Desea eliminar al medico seleccionado","Eliminar Medico", JOptionPane.YES_NO_OPTION);
+        switch (opcionIngresada) {
+            case 0:
+                listaMedico.eliminarMedico(posicionMedicoEliminar);
+                JOptionPane.showMessageDialog(null, "Medico eliminado Exitosamente");
+                limpiarCampos();
+                txtCodigo.setEditable(true);
+                break;
+            default:
+                break;
+        }
+        }
+        
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**

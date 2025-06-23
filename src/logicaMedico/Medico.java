@@ -1,5 +1,7 @@
 package logicaMedico;
 
+import javax.swing.JOptionPane;
+
 public class Medico {
     private String codigo;
     private String nombre;
@@ -30,6 +32,50 @@ public class Medico {
         this.turno = turno;
         this.especialidad = especialidad;
     }
+
+    public int devolverPosicioEspecialidad(Especialidad especialidad) {
+        int posicion = -1;
+        switch (especialidad.name()) {
+            case "PEDIATRIA":
+                posicion = 1;
+                break;
+            case "CARDIOLOGIA":
+                posicion = 2;
+                break;
+            case "DERMATOLOGIA":
+                posicion = 3;
+                break;
+            case "NEUROLOGIA":
+                posicion = 4;
+                break;
+            default:
+            JOptionPane.showMessageDialog(null, "ERROR AL MOSTRAR LA ESPECIALIDAD");
+                break;
+        }
+        return posicion;
+    }
+
+    public int devolverPosicionTurno(Turno turno) {
+        int posicion = -1;
+        switch (turno.name()) {
+            case "DIURNO":
+                posicion = 1;
+                break;
+            case "MIXTO":
+                posicion = 2;
+                break;
+            case "NOCTURNO":
+                posicion = 3;
+                break;
+            default:
+            JOptionPane.showMessageDialog(null, "ERROR AL MOSTRAR EL TURNO");
+                break;
+        }
+        return posicion;
+    }
+
+
+    
 
     public String getCodigo() {
         return codigo;

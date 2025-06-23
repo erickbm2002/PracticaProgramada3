@@ -17,7 +17,7 @@ public class Principal {
      */
     public static void main(String[] args) {
         ArrayListMedico listaMedicos = new ArrayListMedico();
-         MenuPrincipal menu = new MenuPrincipal(listaMedicos);
+        MenuPrincipal menu = new MenuPrincipal(listaMedicos);
         
     }
     

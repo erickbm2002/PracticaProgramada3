@@ -89,6 +89,7 @@ public class FormConsultarMedico extends javax.swing.JFrame {
         jLabel4.setText("Codigo:");
 
         txtCodigo.setBackground(new java.awt.Color(255, 255, 255));
+    
 
         combEspecialidad.setBackground(new java.awt.Color(255, 255, 255));
         combEspecialidad.setForeground(new java.awt.Color(0, 0, 0));
@@ -247,7 +248,25 @@ public class FormConsultarMedico extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
+        String codigoIngresado = txtCodigo.getText();
+        int posicionMedico = listaMedico.buscarMedico(codigoIngresado);
+        if(posicionMedico != -1) {
+            JOptionPane.showMessageDialog(null, "Doctor Encontrado Exitosamente");
+            Medico medicoActual = listaMedico.devolverMedicoBuscado(posicionMedico);
+            txtCodigo.setEditable(false);
+            txtNombre.setText(medicoActual.getNombre());
+            txtNombre.setEditable(false);
+            txtApellido.setText(medicoActual.getApellido());
+            txtApellido.setEditable(false);
+            txtCorreo.setText(medicoActual.getCorreo());
+            txtCorreo.setEditable(false);
+            combEspecialidad.setSelectedIndex(medicoActual.devolverPosicioEspecialidad(medicoActual.getEspecialidad()));
+            combEspecialidad.setEnabled(false);
+            combTurno.setSelectedIndex(medicoActual.devolverPosicionTurno(medicoActual.getTurno()));
+            combTurno.setEnabled(false);
+        }    else {
+            txtCodigo.setText("");
+        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
@@ -275,167 +294,7 @@ public class FormConsultarMedico extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FormConsultarMedico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        /* java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new formIngresarMedico().setVisible(true);
-            }
-        }); */
+    
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import logicaMedico.Medico.Especialidad;
+
 public class ArrayListMedico {
 
     private ArrayList<Medico> listaMedicos;
@@ -15,6 +17,19 @@ public class ArrayListMedico {
     public void agregarMedico(Medico medico) {
         this.listaMedicos.add(medico);
     }
+
+    public Medico devolverMedicoBuscado(int indice) {
+            return listaMedicos.get(indice);
+    }
+
+    public void modificarMedico(int indice, Medico medicoEditado) {
+        listaMedicos.set(indice, medicoEditado);
+    }
+
+    public void eliminarMedico(int indice) {
+        listaMedicos.remove(indice);
+    }
+
 
     public String mostrarDatosLista() {
         String medicos = "";
@@ -34,7 +49,7 @@ public class ArrayListMedico {
         int posicion = -1;
         for (int i = 0; i < listaMedicos.size(); i++ ) {
             Medico medicoActual = listaMedicos.get(i);
-            if(medicoActual.getCodigo() == codigoMedico) {
+            if(medicoActual.getCodigo().equals(codigoMedico)) {
                 encontrado = true;
                 posicion = i;
                 i = listaMedicos.size();
@@ -47,6 +62,15 @@ public class ArrayListMedico {
         return posicion;
         }
 
+    
+
+
+    public boolean listaVacia() {
+        return listaMedicos.isEmpty();
+    }
+
+
+
     public ArrayList<Medico> getListaMedicos() {
         return listaMedicos;
     }
@@ -54,6 +78,8 @@ public class ArrayListMedico {
     public void setListaMedicos(ArrayList<Medico> listaMedicos) {
         this.listaMedicos = listaMedicos;
     }
+
+
 
     
 

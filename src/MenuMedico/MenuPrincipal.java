@@ -6,6 +6,8 @@ package MenuMedico;
 
 import java.text.Normalizer;
 
+import javax.swing.JOptionPane;
+
 import logicaMedico.ArrayListMedico;
 
 /**
@@ -188,11 +190,20 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-       FormConsultarMedico menuConsultar = new FormConsultarMedico(this.listaMedicos);
+       if(!listaMedicos.listaVacia()) {
+        FormConsultarMedico menuConsultar = new FormConsultarMedico(this.listaMedicos);
+       } else {
+        JOptionPane.showMessageDialog(null, "Deben de registrarse medicos antes de consultar","SIN MEDICOS REGISTRADOS", JOptionPane.ERROR_MESSAGE);
+       }
+        
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        if(!listaMedicos.listaVacia()) {
         FormEliminarMedico menuEliminar = new FormEliminarMedico(this.listaMedicos);
+       } else {
+        JOptionPane.showMessageDialog(null, "Deben de registrarse medicos antes de consultar","SIN MEDICOS REGISTRADOS", JOptionPane.ERROR_MESSAGE);
+       }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -200,7 +211,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        FormEditarMedico menuEditar = new FormEditarMedico(this.listaMedicos);
+        if(!listaMedicos.listaVacia()) {
+            FormEditarMedico menuEditar = new FormEditarMedico(this.listaMedicos);
+        }else {
+        JOptionPane.showMessageDialog(null, "Deben de registrarse medicos antes de consultar","SIN MEDICOS REGISTRADOS", JOptionPane.ERROR_MESSAGE);
+       }
+        
     }//GEN-LAST:event_btnEditarActionPerformed
 
     /**

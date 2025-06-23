@@ -270,11 +270,38 @@ public class FormEditarMedico extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
+        String codigoIngresado = txtCodigo.getText();
+        int posicionMedico = listaMedico.buscarMedico(codigoIngresado);
+        if(posicionMedico != -1) {
+            JOptionPane.showMessageDialog(null, "Doctor Encontrado Exitosamente");
+            Medico medicoActual = listaMedico.devolverMedicoBuscado(posicionMedico);
+            txtNombre.setText(medicoActual.getNombre());
+            txtApellido.setText(medicoActual.getApellido());
+            txtCorreo.setText(medicoActual.getCorreo());
+            combEspecialidad.setSelectedIndex(medicoActual.devolverPosicioEspecialidad(medicoActual.getEspecialidad()));
+            combTurno.setSelectedIndex(medicoActual.devolverPosicionTurno(medicoActual.getTurno()));
+            txtCodigo.setEditable(false);
+        } else {
+            txtCodigo.setText("");
+        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        // TODO add your handling code here:
+        String nombre = txtNombre.getText();
+        String apellido = txtApellido.getText();
+        String correo = txtCorreo.getText();
+        String especialidad = combEspecialidad.getSelectedItem().toString();
+        String codigo = txtCodigo.getText();
+        String turno = combTurno.getSelectedItem().toString();
+
+        Medico medico = new Medico(codigo, nombre, apellido, correo, Medico.Turno.valueOf(turno.toUpperCase()), Medico.Especialidad.valueOf(especialidad.toUpperCase()));
+        this.listaMedico.agregarMedico(medico);
+        int posicion = listaMedico.buscarMedico(txtCodigo.getText());
+        listaMedico.modificarMedico(posicion, medico);
+        limpiarCampos();
+        JOptionPane.showMessageDialog(null, "Medico editado correctamente");
+        txtCodigo.setEditable(true);
+        
     }//GEN-LAST:event_btnEditarActionPerformed
 
     /**
